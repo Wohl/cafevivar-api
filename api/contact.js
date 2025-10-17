@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
     // 🔹 CORS
-    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.setHeader("Access-Control-Allow-Origin", "https://cafevivar.com");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -20,8 +20,7 @@ export default async function handler(req, res) {
 
         const { data, error } = await resend.emails.send({
             from: "Contacto Web <onboarding@resend.dev>",
-            to: "byronjvh02@gmail.com",
-            // to: "ventas@cafevivar.com",
+            to: "ventas@cafevivar.com",
             subject: `Nuevo mensaje de ${nombre}`,
             html: `
         <p><strong>Nombre:</strong> ${nombre}</p>
