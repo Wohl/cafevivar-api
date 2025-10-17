@@ -12,9 +12,9 @@ export default async function handler(req, res) {
     if (req.method !== "POST") return res.status(405).json({ message: "❌ Method not allowed" });
 
     try {
-        const { nombre, email, asunto, message } = await parseJSONBody(req);
+        const { nombre, email, asunto, mensaje } = await parseJSONBody(req);
 
-        if (!nombre || !email || !message || !asunto) {
+        if (!nombre || !email || !mensaje || !asunto) {
             return res.status(400).json({ message: "❌ Todos los campos son requeridos" });
         }
 
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         <p><strong>Nombre:</strong> ${nombre}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Asunto:</strong> ${asunto}</p>
-        <p><strong>Mensaje:</strong> ${message}</p>
+        <p><strong>Mensaje:</strong> ${mensaje}</p>
       `,
         });
 
