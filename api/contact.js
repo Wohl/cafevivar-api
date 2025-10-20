@@ -19,13 +19,12 @@ export default async function handler(req, res) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: "Contacto Web <onboarding@resend.dev>",
+            from: "Formulario Web <ventas@cafevivar.com>",
             to: "ventas@cafevivar.com",
-            subject: `Nuevo mensaje de ${nombre}`,
+            subject: `Nuevo mensaje Web: ${asunto}`,
             html: `
         <p><strong>Nombre:</strong> ${nombre}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Asunto:</strong> ${asunto}</p>
         <p><strong>Mensaje:</strong> ${mensaje}</p>
       `,
         });
